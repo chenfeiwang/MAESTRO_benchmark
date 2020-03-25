@@ -7,19 +7,19 @@ library(aricode)
 ncol <- brewer.pal(8,"Set1")
 
 # load integration files
-PBMC_MAESTRO <- readRDS('integration_benchmark/10X_PBMC_gene_score_TSS_10K_integration.rds')
+PBMC_MAESTRO <- readRDS('integration_RPmodel_benchmark/10X_PBMC_gene_score_TSS_10K_integration.rds')
 PBMC_snapATAC <- readRDS('integration_benchmark/10X_PBMC_snapATAC_SeuratObj.rds')
-PBMC_Seurat <- readRDS('integration_benchmark/10X_PBMC_SeuratObj.rds')
+PBMC_Seurat <- readRDS('integration_benchmark/10X_PBMC_Seurat_SeuratObj.rds')
 PBMC_cicero <- readRDS('integration_benchmark/10X_PBMC_cicero_SeuratObj.rds')
 
-BMMC_PBMC_MAESTRO <- readRDS('integration_benchmark/10X_BMMC_PBMC_gene_score_TSS_10K_integration.rds')
+BMMC_PBMC_MAESTRO <- readRDS('integration_RPmodel_benchmark/10X_BMMC_PBMC_gene_score_TSS_10K_integration.rds')
 BMMC_PBMC_snapATAC <- readRDS('integration_benchmark/10X_BMMC_PBMC_snapATAC_SeuratObj.rds')
-BMMC_PBMC_Seurat <- readRDS('integration_benchmark/10X_BMMC_PBMC_SeuratObj.rds')
+BMMC_PBMC_Seurat <- readRDS('integration_benchmark/10X_BMMC_PBMC_Seurat_SeuratObj.rds')
 BMMC_PBMC_cicero <- readRDS('integration_benchmark/10X_BMMC_PBMC_cicero_SeuratObj.rds')
 
-BMMC_MAESTRO <- readRDS('integration_benchmark/10X_BMMC_gene_score_TSS_10K_integration.rds')
+BMMC_MAESTRO <- readRDS('integration_RPmodel_benchmark/10X_BMMC_gene_score_TSS_10K_integration.rds')
 BMMC_snapATAC <- readRDS('integration_benchmark/10X_BMMC_Merged_snapATAC_SeuratObj.rds')
-BMMC_Seurat <- readRDS('integration_benchmark/10X_BMMC_Merged_SeuratObj.rds')
+BMMC_Seurat <- readRDS('integration_benchmark/10X_BMMC_Merged_Seurat_SeuratObj.rds')
 BMMC_cicero <- readRDS('integration_benchmark/10X_BMMC_Merged_cicero_SeuratObj.rds')
 
 # label prediction score distribution

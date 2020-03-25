@@ -1,5 +1,5 @@
 # Benchmark codes used in MAESTRO paper
-We provided the codes used in evaluating ```scATAC-seq clustering```, ```automatic cell-type annotation```, ```integration between scRNA-seq and scATAC-seq using different methods```, and ```integration evaluation using different peak-RP model``` in this repository. While the dataset for evaluation is a big large, users can download the data at [here](), and put the data in the same directory with the benchmark codes.
+We provided the codes used in evaluating ```scATAC-seq clustering```, ```automatic cell-type annotation```, ```integration between scRNA-seq and scATAC-seq using different methods```, and ```integration evaluation using different peak-RP model``` in this repository. While the dataset for evaluation is a big large, users can download the data at [here](http://cistrome.org/~chenfei/MAESTRO/MAESTRO_benchmark.tar.gz), and put the data in the same directory with the benchmark codes.
 
 MAESRO paper can be found at [citation](citation)
 

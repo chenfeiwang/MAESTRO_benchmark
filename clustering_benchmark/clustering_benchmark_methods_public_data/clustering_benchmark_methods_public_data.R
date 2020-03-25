@@ -7,14 +7,15 @@ library(lawstat)
 library(RColorBrewer)
 ncol <- brewer.pal(8,"Set1")
 
+# cellline data analysis
 {
-  cellline_scABC <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/GSE65360_cellline_scABC_cluster.rds')
-  cellline_scABC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/GSE65360_cellline_scABC_umap.rds')
-  cellline_cisTopic <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/GSE65360_cellline_cisTopic_cluster.rds')
-  cellline_cisTopic_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/GSE65360_cellline_cisTopic.rds')
-  cellline_snapATAC <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/GSE65360_cellline_snapATAC_cluster.rds')
-  cellline_snapATAC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/GSE65360_cellline_snapATAC_umap.rds')
-  cellline_MAESTRO <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/MAESTRO/GSE65360_cellline_MAESTRO_SeuratObj.rds')
+  cellline_scABC <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_scABC_cluster.rds')
+  cellline_scABC_umap <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_scABC_umap.rds')
+  cellline_cisTopic <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_cisTopic_cluster.rds')
+  cellline_cisTopic_umap <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_cisTopic_umap.rds')
+  cellline_snapATAC <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_snapATAC_cluster.rds')
+  cellline_snapATAC_umap <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_snapATAC_umap.rds')
+  cellline_MAESTRO <- readRDS('clustering_benchmark_methods_public_data/GSE65360_cellline_MAESTRO_SeuratObj.rds')
 
   get_orign_index <- function(orig, umap) {x<-NULL;y<-NULL;
                                  for(celltype in unique(orig)) {x <- c(x,mean(umap[orig==celltype,1])); y <- c(y,mean(umap[orig==celltype,2]))}
@@ -54,14 +55,15 @@ ncol <- brewer.pal(8,"Set1")
   dev.off()
 }
 
+# HSC data analysis
 {
-  HSC_scABC <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/GSE96772_HSC_scABC_cluster.rds')
-  HSC_scABC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/GSE96772_HSC_scABC_umap.rds')
-  HSC_cisTopic <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/GSE96772_HSC_cisTopic_cluster.rds')
-  HSC_cisTopic_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/GSE96772_HSC_cisTopic.rds')
-  HSC_snapATAC <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/GSE96772_HSC_snapATAC_cluster.rds')
-  HSC_snapATAC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/GSE96772_HSC_snapATAC_umap.rds')
-  HSC_MAESTRO <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/MAESTRO/GSE96772_HSC_MAESTRO_SeuratObj.rds')
+  HSC_scABC <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_scABC_cluster.rds')
+  HSC_scABC_umap <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_scABC_umap.rds')
+  HSC_cisTopic <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_cisTopic_cluster.rds')
+  HSC_cisTopic_umap <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_cisTopic_umap.rds')
+  HSC_snapATAC <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_snapATAC_cluster.rds')
+  HSC_snapATAC_umap <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_snapATAC_umap.rds')
+  HSC_MAESTRO <- readRDS('clustering_benchmark_methods_public_data/GSE96772_HSC_MAESTRO_SeuratObj.rds')
 
 
   get_orign <- function(names) {samples <- sapply(strsplit(gsub("scatac\\.","",gsub("^[0-9]*\\.","",gsub("^[0-9]*\\.scATAC\\.","",gsub("singles\\.","",names)))),"\\."), function(x) x[2])
@@ -105,19 +107,20 @@ ncol <- brewer.pal(8,"Set1")
   dev.off()
 }
 
+# PBMC data analysis
 {
-  PBMC_genescore <- read.table('/homes/cwang/projects/MAESTRO/analysis/ATAC/data/10X_PBMC_gene_score.txt')
+  PBMC_genescore <- read.table('clustering_benchmark_methods_public_data/10X_PBMC_gene_score.txt')
   PBMC_markerscore <- na.omit(PBMC_genescore[as.character(read.table('pbmc.maker.genes.txt')[,1]),])
   PBMC_housekeepingscore <- na.omit(PBMC_genescore[as.character(read.table('pbmc.housekeeping.genes.txt')[,1]),])
   
-  PBMC_scABC <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/10X_PBMC_scABC_cluster.rds')
-  PBMC_scABC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/scABC/10X_PBMC_scABC_umap.rds')
-  PBMC_cisTopic <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/10X_PBMC_cisTopic_cluster.rds')
-  PBMC_cisTopic_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/cisTopic/10X_PBMC_cisTopic.rds')
-  PBMC_snapATAC_raw <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/10X_PBMC_snapATAC_cluster.rds') 
+  PBMC_scABC <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_scABC_cluster.rds')
+  PBMC_scABC_umap <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_scABC_umap.rds')
+  PBMC_cisTopic <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_cisTopic_cluster.rds')
+  PBMC_cisTopic_umap <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_cisTopic_umap.rds')
+  PBMC_snapATAC_raw <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_snapATAC_cluster.rds') 
   PBMC_snapATAC <- as.numeric(PBMC_snapATAC_raw); names(PBMC_snapATAC) <- gsub("-",".",names(PBMC_snapATAC_raw))
-  PBMC_snapATAC_umap <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/snapATAC/10X_PBMC_snapATAC_umap.rds')
-  PBMC_MAESTRO <- readRDS('/homes/cwang/projects/MAESTRO/analysis/ATAC/cluster/peak/MAESTRO/10X_PBMC_MAESTRO_SeuratObj.rds')$ATAC
+  PBMC_snapATAC_umap <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_snapATAC_umap.rds')
+  PBMC_MAESTRO <- readRDS('clustering_benchmark_methods_public_data/10X_PBMC_MAESTRO_SeuratObj.rds')$ATAC
    
   calculate_RAGI_score <- function(cluster)
   {

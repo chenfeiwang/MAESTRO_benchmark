@@ -20,8 +20,8 @@ We benchmarked the performance of automatic celltype annotation using SCINA, Gar
 
 ### Integration between scRNA-seq and scATAC-seq using different methods
 The data can R codes be found at ```integration_benchmark``` directory.
-We benchmarked the integration performance using MAESTRO peak-RP model, Seurat gene activity score, snapATAC-seq genebody score, and cicero score. The performance was evaluated by the cell-type label prediction score, NMI between scRNA-seq cell-types and scATAC-seq cluster after integration, and correlation between scRNA-seq and scATAC-seq gene activity score after integration.
+We benchmarked the integration performance using MAESTRO peak-RP model, Seurat gene activity score, snapATAC-seq genebody score, and cicero score. The performance was evaluated by the distribution of cell-type label prediction score, and spearman correlation between scRNA-seq and scATAC-seq gene activity score on both top 2000 highly variable genes and all genes.
 
 ### Integration between scRNA-seq and scATAC-seq using different peak-RP model
 The data can R codes be found at ```integration_RPmodel_benchmark``` directory.
-We benchmarked the integration performance of different MAESTRO peak-RP models, enhancer-based regulation using TSS 10K peak-RP model, promoter-based regulation using TSS 1K peak-RP model, and genebody-centered regulation using Genebody-10K peak-RP model. The performance was evaluated by the cell-type label prediction score, NMI between scRNA-seq cell-types and scATAC-seq cluster after integration, and correlation between scRNA-seq and scATAC-seq gene activity score after integration.
+We benchmarked the integration performance of different MAESTRO peak-RP models. The performance was evaluated by the distribution of cell-type label prediction score, and spearman correlation between scRNA-seq and scATAC-seq gene activity score on top 2000 highly variable genes.

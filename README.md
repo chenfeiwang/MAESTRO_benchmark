@@ -19,9 +19,9 @@ The data can R codes be found at ```annotation_benchmark``` directory.
 We benchmarked the performance of automatic celltype annotation using SCINA, Garnett and MAESTRO on sorted PBMC dataset from [Zheng et,al](https://www.nature.com/articles/ncomms14049). The cell-types were annotated using LM22 or a simple gene signature from Garnett. The performance was evaluated using median F1-score between true labels and annotated cell-type labels. Codes for benchmarking were adopted from [scRNAseq_Benchmark](https://github.com/tabdelaal/scRNAseq_Benchmark).
 
 ### Integration between scRNA-seq and scATAC-seq using different methods
-The data can R codes be found at ```integration_benchmark``` directory.
+The data and R codes can be found at ```integration_benchmark``` directory.
 We benchmarked the integration performance using MAESTRO peak-RP model, Seurat gene activity score, snapATAC-seq genebody score, and cicero score. The performance was evaluated by the distribution of cell-type label prediction score, and spearman correlation between scRNA-seq and scATAC-seq gene activity score on both top 2000 highly variable genes and all genes.
 
-### Integration between scRNA-seq and scATAC-seq using different peak-RP model
-The data can R codes be found at ```integration_RPmodel_benchmark``` directory.
+### Integration between scRNA-seq and scATAC-seq using different peak-RP models
+The data and R codes can be found at ```integration_RPmodel_benchmark``` directory.
 We benchmarked the integration performance of different MAESTRO peak-RP models. The performance was evaluated by the distribution of cell-type label prediction score, and spearman correlation between scRNA-seq and scATAC-seq gene activity score on top 2000 highly variable genes.
